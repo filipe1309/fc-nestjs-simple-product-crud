@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Product } from './models/product.model';
+import { ProductController } from './controllers/product/product.controller';
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { Product } from './models/product.model';
     // Only the entities that will be used in this module
     TypeOrmModule.forFeature([Product]),
   ],
-  controllers: [AppController],
+  controllers: [AppController, ProductController],
   providers: [AppService],
 })
 export class AppModule {}
